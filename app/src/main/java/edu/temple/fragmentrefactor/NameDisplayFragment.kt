@@ -34,23 +34,30 @@ class NameDisplayFragment : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_name_display, container, false)
+        return inflater.inflate(R.layout.fragment_name_display, container, false).apply {
 
-    }
-
-    val displayTextView = findViewById<TextView>(R.id.displayTextView)
-    val nameEditText = findViewById<EditText>(R.id.nameEditText)
-    val changeButton = findViewById<Button>(R.id.changeButton)
-
-    changeButton.setOnClickListener {
-        val name = nameEditText.text
+            val displayTextView = findViewById<TextView>(R.id.displayTextView)
+            val nameEditText = findViewById<EditText>(R.id.nameEditText)
+            val changeButton = findViewById<Button>(R.id.changeButton)
 
 
-        displayTextView.text = if (name.isNotBlank()) {
-            "Hello, $name!"
-        } else {
-            "Please enter your name"
+
+            changeButton.setOnClickListener {
+                val name = nameEditText.text
+
+
+                displayTextView.text = if (name.isNotBlank()) {
+                    "Hello, $name!"
+                } else {
+                    "Please enter your name"
+                }
+            }
+
+
         }
+
     }
+
+
 
 }
