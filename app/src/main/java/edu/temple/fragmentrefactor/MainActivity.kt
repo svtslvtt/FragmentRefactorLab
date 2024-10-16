@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         changeButton.setOnClickListener {
             val name = nameEditText.text
 
+
             displayTextView.text = if (name.isNotBlank()) {
                 "Hello, $name!"
             } else {
